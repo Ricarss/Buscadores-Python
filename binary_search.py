@@ -35,23 +35,30 @@ def binary_search(ar,obj,ini,end):
     if ar[medio] < obj:
         return binary_search(ar,obj,ini,medio-1)
 
-def timer(func):
-    ini = t.time()
-    match = func()
-    end = t.time()
-
-    return end - ini, match
-
 if __name__ == '__main__':
     
     ar = ar_gen()
     obj = rd.randint(0,55000)
 
-    time, match = timer(linear_search(ar,obj))
-
+    inicio = t.time()
     print(f"""
-    
     {obj} {"está" if linear_search(ar,obj) else "no está"} en la lista generada
-
     """)
+    fin = t.time()
+    
+    print(f'''
+    La búsqueda lineal tardó {fin-inicio} segundos    
+    ''')
+
+    print("\n")
+
+    inicio = t.time()
+    print(f'''
+    {obj} {'está' if binary_search(ar,obj,0,len(ar)-1) else 'no está'} en la lista generada
+    ''')
+    fin = t.time()
+
+    print(f'''
+    La búsqueda binaria tardó {fin - inicio} segundos
+    ''')
 
