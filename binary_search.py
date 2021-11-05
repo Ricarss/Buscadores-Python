@@ -3,7 +3,7 @@ import numpy.random as rd
 
 def ar_gen():
     
-    size = rd.randint(10000,50000) # código que genera el tamaño de la lista
+    size = rd.randint(1000,1500) # código que genera el tamaño de la lista
     ar = sorted([rd.randint(0,size) for i in range(size)]) # código que genera el listado 
 
     return ar
@@ -24,25 +24,30 @@ def linear_search(ar,obj):
 def binary_search(ar,obj,ini,end,steps):
 
     steps += 1
+    medio = ((end+ini) // 2) 
+    
+    print(f'Se ejecuta la búsqueda binaria en el listado {ar[ini:end]} para buscar {obj}')
+
+
+
+    print(f'inicio: {ini} \n final:{end} \n medio: {medio} \n valor medio: {ar[medio]}')
 
     if ini > end:
         return False, steps
-
-    medio = (end-ini) // 2
 
     if ar[medio] == obj:
         return True, steps
     
     if ar[medio] > obj:
-        return binary_search(ar,obj,medio+1,end,steps)
+        return binary_search(ar,obj,ini,medio,steps)
     
     if ar[medio] < obj:
-        return binary_search(ar,obj,ini,medio-1,steps)
+        return binary_search(ar,obj,medio+1,end,steps)
 
 if __name__ == '__main__':
     
     ar = ar_gen()
-    obj = rd.randint(0,55000)
+    obj = rd.randint(0,len(ar))
     
     ls_ini = t.time()
     ls_match, ls_steps = linear_search(ar,obj)
