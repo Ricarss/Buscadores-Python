@@ -10,10 +10,13 @@ def ar_gen():
 def bub_sort(ar):
     
     bubble = 0
+    move = len(ar)
 
-    for idx1 in range(len(ar)):
-
-        for idx2 in range(len(ar)-1) :
+    for idx1 in range(move):
+        
+        ar_bub = ar[0:move-idx1]
+        
+        for idx2 in range(len(ar_bub)-1) :
 
             if ar[idx2] > ar[idx2+1]:
 
