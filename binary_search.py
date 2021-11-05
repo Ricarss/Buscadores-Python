@@ -4,7 +4,7 @@ import numpy.random as rd
 def ar_gen():
     
     size = rd.randint(10000,50000) # código que genera el tamaño de la lista
-    ar = [rd.randint(0,size) for i in range(size)] # código que genera el listado 
+    ar = sorted([rd.randint(0,size) for i in range(size)]) # código que genera el listado 
 
     return ar
 
