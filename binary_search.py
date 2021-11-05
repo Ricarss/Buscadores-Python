@@ -39,7 +39,7 @@ def binary_search(ar,obj,ini,end):
 if __name__ == '__main__':
     
     ar = ar_gen()
-    obj = rd.randint(1,100000)
+    obj = rd.randint(0,55000)
 
     print(f"""
     
