@@ -35,11 +35,19 @@ def binary_search(ar,obj,ini,end):
     if ar[medio] < obj:
         return binary_search(ar,obj,ini,medio-1)
 
+def timer(func):
+    ini = t.time()
+    match = func()
+    end = t.time()
+
+    return end - ini, match
 
 if __name__ == '__main__':
     
     ar = ar_gen()
     obj = rd.randint(0,55000)
+
+    time, match = timer(linear_search(ar,obj))
 
     print(f"""
     
