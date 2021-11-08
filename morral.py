@@ -1,8 +1,10 @@
 import random as rd
 
-def steal(morral, c_morral, objects):
+def steal(objects,morral,c_morral):
+    
+   if len[objects] < 0  
+    
 
-    pass
 
 class Objects():
 
@@ -39,5 +41,6 @@ if __name__ == '__main__':
     print(f'La carga máxima del morral es de: {c_morral}')
     
     objects = articles()
-    print(objects)
+    
+    morral = steal(objects,morral, c_morral)
 
