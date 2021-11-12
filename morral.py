@@ -2,7 +2,7 @@ import random as rd
 
 def steal(objects,morral,c_morral):
     
-   if len[objects] < 0  
+   if len[objects]   
     
 
 
